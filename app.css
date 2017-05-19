@@ -1,0 +1,39 @@
+/*Specify actual div width = padding + border + content width. This does not include marging width*/
+* {
+    box-sizing: border-box;
+}
+
+/*define 12 column in the page*/
+.col-1{ width:  8.33%  }
+.col-2{ width:  16.66%  }
+.col-3{ width:  25% }
+.col-4{ width:  33.32% }
+.col-5{ width:  41.65% }
+.col-6{ width:  50% }
+.col-7{ width:  58.31% }
+.col-8{ width:  66.66% }
+.col-9{ width:  75% }
+.col-10{ width:  83.33% }
+.col-11{ width:  91.66% }
+.col-12{ width:  100% }
+
+/*set float propery in each cell to left*/
+[class*="col-"]{
+    float:left;
+    border: 1px solid black;
+    padding: 15px 5px;
+}
+
+/*to prevent next row cell falling into same container*/
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/*when page rend in mobile phone, each cell takes over full width of the screen*/
+@media only screen and (max-width: 768px) {
+    [class*="col-"] {
+        width: 100%;
+    }
+}
